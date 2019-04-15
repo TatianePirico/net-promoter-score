@@ -1,0 +1,54 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .modal{
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    .modal_container{
+      background-color: white;
+      border-radius: 10px;
+      width: 400px;
+      height: 400px;
+      .title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: linear-gradient(to bottom, #e3655b, #e77368, #eb8075, #ef8d82, #f29a90);
+        z-index: 2;
+        margin: -20px 60px 0px 60px;
+        border-radius: 5px;
+        padding: 20px 0px;
+        .text-title{
+          color: white;
+          font-family: Helvetica, Arial, sans-serif;
+          font-size: 18px;
+        }
+        .emoji{
+          width: 40px;
+          height: auto;
+        }
+        .emoji--hidden{
+          display: none;
+        }
+      }
+      .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+  .modal--hidden{
+    display: none;
+  }
+}

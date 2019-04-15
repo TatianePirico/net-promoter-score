@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IModal } from './shared/models/modal.interface';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'net-promoter-score';
+
+  private modalDataTeste: IModal;
+
+  modalData(modalData: IModal):void {
+    this.modalDataTeste = modalData;
+  }
 }

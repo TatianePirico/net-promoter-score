@@ -1,0 +1,8 @@
+<section class="score">
+    <div 
+      *ngFor="let note of score" 
+      [ngClass]="noteSelected >= note ? 'note note--' + note : 'note'"
+      (mouseover)="noteSelected=note"
+      (click)="showModal(note)"
+      ></div>
+</section>

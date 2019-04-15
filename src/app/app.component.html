@@ -1,21 +1,25 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<section id="content">
 
-<router-outlet></router-outlet>
+  <div>Fornecedores</div>
+
+  <button>Mais inspiração</button>
+  <button>Mais forncedores</button>
+  
+  <span>Qual a probabilidade de você recomendar o Lejour para outra pessoa?</span>
+  <app-net-promoter-score (modalData)="modalData($event)"></app-net-promoter-score>
+  <app-modal [data]="modalDataTeste"></app-modal>
+
+</section>
+
+<footer>
+  <section class="shortcut">
+    <article id="company"></article>
+    <article id="inspiration"></article>
+    <article id="information"></article>
+    <article id="yourAccount"></article>
+  </section>
+  <span id="contact">
+    © 2016 Lejour. Todos deireitos reservados. Praça Tomas Morus, 81, Barra Funda, São Paulo, SP - 
+    CEP: 05003-090. Tel: (11) 3871-1677.
+  </span>
+</footer>

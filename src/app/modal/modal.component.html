@@ -1,0 +1,19 @@
+<section [ngClass]="data.isOpen ? 'modal' : 'modal--hidden'">
+
+  <div class="modal_container">
+
+    <article class="title">
+      <h2 class="text-title">{{data.title}}</h2>
+      <img [src]="'assets/icons/' + data.emoji" [ngClass]="!!data.emoji ? 'emoji' : 'emoji--hidden'">
+    </article>
+
+    <article class="content">
+      <span>{{data.description}}</span>
+      <input />
+      <span>{{data.inputDescription}}</span>
+      <button>{{data.button}}</button>
+    </article>
+
+  </div>
+
+</section>
