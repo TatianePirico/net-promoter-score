@@ -1,48 +1,65 @@
 :host {
 	display: flex;
-	flex-direction: column;
+	justify-content: center;
+	background-color: #e6f7f6;
+	height: 120px;
 	align-items: center;
-	.score{
+	color: rgb(134, 134, 134);
+	.nps{
 		display: flex;
-		flex-direction: row;
-		.note{
-			margin: 20px;
-			width: 10px;
-			height: 10px;
-			border-radius: 50%;
-			background: transparent;
-			cursor: pointer;
-			border: 2px solid rgb(152, 152, 152);
+		flex-direction: column;
+		align-items: center;
+		.score-legend{
+			width: 540px;
+			display: flex;
+			font-size: 12px;
+			justify-content: space-between;
 		}
-		.note--1{
-			background: rgb(255,10,0);
+		.score-title{
+			font-size: 17px;
 		}
-		.note--2{
-			background: rgb(255,50,0);
-		}
-		.note--3{
-			background: rgb(255,120,0);
-		}
-		.note--4{
-			background: rgb(255,186,0);
-		}
-		.note--5{
-			background: rgb(255,242,0);
-		}
-		.note--6{
-			background: rgb(236,234,0);
-		}
-		.note--7{
-			background: rgb(179,211,0);
-		}
-		.note--8{
-			background: rgb(137,194,0);
-		}
-		.note--9{
-			background: rgb(117,186,0);
-		}
-		.note--10{
-			background: rgb(32,151,0);
+		.score{
+			display: flex;
+			flex-direction: row;
+			.note{
+				margin: 20px;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: transparent;
+				cursor: pointer;
+				border: 2px solid rgb(152, 152, 152);
+			}
+			.note--1{
+				background: rgb(255,10,0);
+			}
+			.note--2{
+				background: rgb(255,50,0);
+			}
+			.note--3{
+				background: rgb(255,120,0);
+			}
+			.note--4{
+				background: rgb(255,186,0);
+			}
+			.note--5{
+				background: rgb(255,242,0);
+			}
+			.note--6{
+				background: rgb(236,234,0);
+			}
+			.note--7{
+				background: rgb(179,211,0);
+			}
+			.note--8{
+				background: rgb(137,194,0);
+			}
+			.note--9{
+				background: rgb(117,186,0);
+			}
+			.note--10{
+				background: rgb(32,151,0);
+			}
 		}
 	}
 }

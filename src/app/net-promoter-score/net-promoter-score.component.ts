@@ -33,7 +33,7 @@ export class NetPromoterScoreComponent implements OnInit {
       description: 'Dica? Reclamação? Só um obrigado? Pode escrever aqui pra gente!',
       hasInput: true,
       inputDescription: '0 a 140 caracteres',
-      button: 'Enviar comentário'
+      button: 'Enviar comentário',
     }
     if (!!note) this.modalData.emit(modal);
   }

@@ -7,5 +7,5 @@ export interface IModal {
 	description?: string,
 	hasInput: boolean,
 	inputDescription?: string,
-	button: string
+	button: string,
 }

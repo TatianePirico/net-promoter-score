@@ -5,9 +5,8 @@
   <button>Mais inspiração</button>
   <button>Mais forncedores</button>
   
-  <span>Qual a probabilidade de você recomendar o Lejour para outra pessoa?</span>
-  <app-net-promoter-score (modalData)="modalData($event)"></app-net-promoter-score>
-  <app-modal [data]="modalDataTeste"></app-modal>
+  <app-net-promoter-score (modalData)="getModalData($event)"></app-net-promoter-score>
+  <app-modal *ngIf="modalData" (modalData)="getModalData($event)" [data]="modalData"></app-modal>
 
 </section>
 

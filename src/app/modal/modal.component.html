@@ -1,17 +1,27 @@
-<section [ngClass]="data.isOpen ? 'modal' : 'modal--hidden'">
-
-  <div class="modal_container">
-
+<section class="modal_background" *ngIf="!!data.isOpen">
+  <div class="modal">
+    
+    <section class="close-modal">
+      <img src="assets/icons/close.png" class="icon" (click)="closeModal()" />
+    </section>
+    
     <article class="title">
       <h2 class="text-title">{{data.title}}</h2>
-      <img [src]="'assets/icons/' + data.emoji" [ngClass]="!!data.emoji ? 'emoji' : 'emoji--hidden'">
+      <img [src]="'assets/icons/' + data.emoji" [ngClass]="!!data.emoji ? 'emoji' : 'emoji--hidden'" />
     </article>
-
+    
     <article class="content">
-      <span>{{data.description}}</span>
-      <input />
-      <span>{{data.inputDescription}}</span>
-      <button>{{data.button}}</button>
+      <span class="content_description">{{data.description}}</span>
+      <div class="comment">
+        <textarea class="input" rows="3" maxlength="140" (keyup)="getComment($event.target.value)"></textarea>
+        <span class="description">{{data.inputDescription}}</span>
+      </div>
+      <button 
+        (click)="clickButton(data.button)"
+        [ngClass]="buttonIsActive? 'content_button content_button--active' : 'content_button'"
+        >
+        {{data.button}}
+      </button>
     </article>
 
   </div>

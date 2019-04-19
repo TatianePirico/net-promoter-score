@@ -1,8 +1,20 @@
-<section class="score">
-    <div 
+<section class="nps">
+    
+  <span class="score-title">Qual a probabilidade de você recomendar o Lejour para outra pessoa?</span>
+    
+  <section class="score">
+      <div 
       *ngFor="let note of score" 
       [ngClass]="noteSelected >= note ? 'note note--' + note : 'note'"
       (mouseover)="noteSelected=note"
       (click)="showModal(note)"
-      ></div>
+      >
+    </div>
+  </section>
+
+  <div class="score-legend">
+    <span>Não recomendaria</span>
+    <span>Recomendaria com certeza</span>
+  </div>
+
 </section>

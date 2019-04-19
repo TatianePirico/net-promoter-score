@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IModal } from './shared/models/modal.interface';
+import { NPSService } from './shared/services/nps.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,20 @@ import { IModal } from './shared/models/modal.interface';
 })
 export class AppComponent {
 
-  private modalDataTeste: IModal;
+  private modalData: IModal;
 
-  modalData(modalData: IModal):void {
-    this.modalDataTeste = modalData;
+  constructor(
+    private _NPSService: NPSService
+  ){ }
+
+  ngOnInit(){
+    // this._NPSService.getResults()
+    //   .subscribe(
+    //     data => { console.log(data)}
+    //   );
+  }
+
+  getModalData(modalData: IModal):void {
+    this.modalData = modalData;
   }
 }
