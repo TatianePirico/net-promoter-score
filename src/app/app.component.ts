@@ -10,19 +10,16 @@ import { NPSService } from './shared/services/nps.service';
 export class AppComponent {
 
   private modalData: IModal;
+  private NPSHidden: boolean = false;
 
   constructor(
     private _NPSService: NPSService
   ){ }
 
-  ngOnInit(){
-    // this._NPSService.getResults()
-    //   .subscribe(
-    //     data => { console.log(data)}
-    //   );
-  }
+  ngOnInit() { }
 
   getModalData(modalData: IModal):void {
+    if(!modalData.button && modalData.requestResponse.code === 200) this.NPSHidden = true;
     this.modalData = modalData;
   }
 }

@@ -1,24 +1,12 @@
 <section id="content">
 
-  <div>Fornecedores</div>
-
-  <button>Mais inspiração</button>
-  <button>Mais forncedores</button>
+  <img src="assets/img/cards.png" class="cards" />
   
-  <app-net-promoter-score (modalData)="getModalData($event)"></app-net-promoter-score>
+  <app-net-promoter-score *ngIf="!NPSHidden" (modalData)="getModalData($event)"></app-net-promoter-score>
   <app-modal *ngIf="modalData" (modalData)="getModalData($event)" [data]="modalData"></app-modal>
 
 </section>
 
 <footer>
-  <section class="shortcut">
-    <article id="company"></article>
-    <article id="inspiration"></article>
-    <article id="information"></article>
-    <article id="yourAccount"></article>
-  </section>
-  <span id="contact">
-    © 2016 Lejour. Todos deireitos reservados. Praça Tomas Morus, 81, Barra Funda, São Paulo, SP - 
-    CEP: 05003-090. Tel: (11) 3871-1677.
-  </span>
+  <img src="assets/img/footer.png" class="img" />
 </footer>

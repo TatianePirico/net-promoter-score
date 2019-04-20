@@ -22,9 +22,26 @@ export class ModalComponent implements OnInit {
 
   ngOnInit() { }
 
-  private closeModal() {
+  private async closeModal() {
     this.data.isOpen = false;
-    this._NPSService.getResults().subscribe(data => { console.log(data) });
+
+    const request: INoteResponse = await this._NPSService.getResults()
+      .toPromise()
+      .then(data => data );
+
+    const modal: IModal = {
+      isOpen: false,
+      title: null,
+      titleColor: null,
+      emoji: null,
+      content: null,
+      description: null,
+      hasInput: false,
+      inputDescription: null,
+      button: null,
+      requestResponse: request
+    }
+    this.modalData.emit(modal);
   }
 
   private getComment(comment: string):void {
