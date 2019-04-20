@@ -1,23 +1,24 @@
 <section class="modal_background" *ngIf="!!data.isOpen">
-  <div class="modal">
+  <div [ngClass]="!!data.titleColor ? 'modal' : 'modal modal--small'">
     
     <section class="close-modal">
       <img src="assets/icons/close.png" class="icon" (click)="closeModal()" />
     </section>
     
-    <article class="title">
+    <article [ngClass]="!!data.titleColor ? 'title title--colorful' : 'title'">
       <h2 class="text-title">{{data.title}}</h2>
-      <img [src]="'assets/icons/' + data.emoji" [ngClass]="!!data.emoji ? 'emoji' : 'emoji--hidden'" />
+      <img [src]="'assets/icons/' + data.emoji" *ngIf="!!data.emoji" class="emoji" />
     </article>
     
-    <article class="content">
-      <span class="content_description">{{data.description}}</span>
-      <div class="comment">
+    <article [ngClass]="!!data.titleColor ? 'content' : 'content content--small'">
+      <span *ngIf="!!data.content" class="content_text" >{{data.content}}</span>
+      <span *ngIf="!!data.description" class="content_description">{{data.description}}</span>
+      <div class="comment" *ngIf="!!data.hasInput">
         <textarea class="input" rows="3" maxlength="140" (keyup)="getComment($event.target.value)"></textarea>
         <span class="description">{{data.inputDescription}}</span>
       </div>
       <button 
-        (click)="clickButton(data.button)"
+        (click)="clickButton(data.button, data.requestResponse)"
         [ngClass]="buttonIsActive? 'content_button content_button--active' : 'content_button'"
         >
         {{data.button}}

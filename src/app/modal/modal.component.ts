@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { IModal } from '../shared/models/modal.interface';
+import { IModal, INoteResponse, IDataResponse } from '../shared/models/modal.interface';
+import { NPSService } from '../shared/services/nps.service';
 
 @Component({
   selector: 'app-modal',
@@ -15,42 +16,52 @@ export class ModalComponent implements OnInit {
   comment: string = '';
   buttonIsActive: boolean = false;
 
-  constructor() { }
+  constructor(
+    private _NPSService: NPSService
+  ) { }
 
   ngOnInit() { }
 
-  closeModal():void {
+  private closeModal() {
     this.data.isOpen = false;
+    this._NPSService.getResults().subscribe(data => { console.log(data) });
   }
 
-  getComment(comment: string):void {
+  private getComment(comment: string):void {
     this.comment = comment;
     this.buttonIsActive = !!comment;
   }
   
-  clickButton(action: string):void{
+  private clickButton(action: string, requestResponse: INoteResponse):void{
     switch (action) {
       case 'Fechar':
         this.closeModal();
         break;
       case 'Enviar comentário':
-        this.sendComment();
+        this.sendComment(requestResponse.data);
         break;
-    
     }
   }
 
-  sendComment(): void {
+  private async sendComment(requestResponse: IDataResponse) {
+
+    const id = requestResponse.id;
+
+    const request: INoteResponse = await this._NPSService.sendComment(id, this.comment)
+      .toPromise()
+      .then(data => data );
+
     const modal: IModal = {
       isOpen: true,
       title: "Muito obrigado!",
-      titleColor: "",
-      emoji: "",
+      titleColor: null,
+      emoji: null,
       content: "Sua opinião é muito importante para nós, de verdade! É a partir de comentários como o seu que nos reinventamos para melhorar e ajudar cada ves mais noivas em suas jornadas.",
-      description: "",
+      description: null,
       hasInput: false,
-      inputDescription: "",
+      inputDescription: null,
       button: "Fechar",
+      requestResponse: request
     }
     this.modalData.emit(modal);
   }

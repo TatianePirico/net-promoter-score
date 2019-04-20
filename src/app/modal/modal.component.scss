@@ -19,6 +19,9 @@
       border-radius: 5px;
       width: 500px;
       height: 400px;
+      &.modal--small{
+        height: 350px;
+      }
       &>.close-modal{
         display: flex;
         flex-direction: column;
@@ -34,24 +37,28 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-image: linear-gradient(to bottom, #e3655b, #e77368, #eb8075, #ef8d82, #f29a90);
         z-index: 2;
         border-radius: 5px;
         width: 380px;
         height: 140px;
         margin: -50px 60px 0px 60px;
         justify-content: center;
+        &.title--colorful{
+          background-image: linear-gradient(to bottom, #e3655b, #e77368, #eb8075, #ef8d82, #f29a90);
+          &>.text-title{
+            color: white;
+            font-size: 24px;
+            font-family: 'Nanum Myeongjo', serif;
+          }
+        }
         &>.text-title{
-          color: white;
-          font-size: 24px;
+          color: rgb(63,63,63);
+          font-size: 30px;
           font-family: 'Nanum Myeongjo', serif;
         }
         &>.emoji{
           width: 40px;
           height: auto;
-        }
-        &>.emoji--hidden{
-          display: none;
         }
       }
       &>.content{
@@ -61,6 +68,15 @@
         margin-top: 100px;
         height: calc(100% - 120px);
         justify-content: space-around;
+        &.content--small{
+          margin-top: 70px;
+        }
+        &>.content_text{
+          width: 390px;
+          font-size: 16px;
+          text-align: center;
+          line-height: 27px;
+        }
         &>.content_description{
           width: 230px;
           font-size: 12px;
